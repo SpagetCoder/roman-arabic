@@ -10,7 +10,7 @@ import pl.polsl.zientek.lukasz.converter.view.View;
 public class CheckCommandConsoleArguments
 {
     /**
-     * initialization of object of the class view
+     * initialization of object of the class view fsbhsdfhb shlf sdluj
      */
     private View view = new View();
 
