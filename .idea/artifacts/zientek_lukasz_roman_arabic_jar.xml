@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="zientek.lukasz.roman-arabic:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/zientek_lukasz_roman_arabic_jar</output-path>
+    <root id="archive" name="zientek.lukasz.roman-arabic.jar">
+      <element id="module-output" name="zientek.lukasz.roman-arabic" />
+    </root>
+  </artifact>
+</component>
