@@ -49,20 +49,16 @@ public class CheckCommandConsoleArguments
             {
                 if (input[i].equals("-a"))
                 {
-                    // creating object checkArabic of class CheckArabic
-                    CheckArabic checkArabic = new CheckArabic();
                     // checking if input given by user is correct for converting into roman numerals
-                    checkArabic.checkIfCorrectArabic(input[i],input[i+1]);
+                    new CheckArabic().checkIfCorrectArabic(input[i],input[i+1]);
                     //move position in arguments by 2
                     i+=2;
                 }
 
                 else if (input[i].equals("-r"))
                 {
-                    // creating object checkRoman of class CheckRoman
-                    CheckRoman checkRoman = new CheckRoman();
                     // checking if input given by user is correct for converting into arabic numbers
-                    checkRoman.checkIfCorrectRoman(input[i],input[i+1]);
+                    new CheckRoman().checkIfCorrectRoman(input[i],input[i+1]);;
                     //move position in arguments by 2
                     i+=2;
                 }
