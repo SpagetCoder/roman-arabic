@@ -1,5 +1,8 @@
 package pl.polsl.zientek.lukasz.converter.model.romanarabic;
 
+import pl.polsl.zientek.lukasz.converter.model.Data;
+import java.util.List;
+
 /**
  * The RomanToArabic class responsible for converting roman numerals into arabic numbers
  * @author Lukasz Zientek
@@ -8,42 +11,37 @@ package pl.polsl.zientek.lukasz.converter.model.romanarabic;
 public class RomanToArabic
 {
     /**
-     * Array of roman numerals
-     */
-    private final char [] romanNumeral = {'M', 'D', 'C' , 'L', 'X', 'V', 'I'};
-    /**
-     * Array of arabic numbers
-     */
-    private final int [] arabicNumber = {1000, 500, 100, 50, 10, 5, 1};
-
-    /**
      * Algorithm which converts roman numerals into arabic numbers
      * @param input roman numeral given by user
      * @return arabic number obtained after conversion
      */
     public Long romanToArabicAlgorithm(String input)
     {
-        int i = 0;// position in arrays
+        Data data = new Data();
+        List<Character> romanNumeral = data.getRomanNumeral();
+        List<Integer> arabicNumber = data.getArabicNumber();
+
+        int i = 0;// position in list
         int j = 0; // position in roman numeral
         long result = 0;
 
         // our position in roman numeral has to be less than length of this numeral and position in array has to be less than length of arabicNumber array
-        while (j < input.length() && i < arabicNumber.length)
+        while (j < input.length() && i < arabicNumber.size())
         {
             // if we find corresponding char, handling M, D , C etc
-            if (input.charAt(j) == (romanNumeral[i]))
+            if (input.charAt(j) == (romanNumeral.get(i)))
             {
                 // add value to the result
-                result += arabicNumber[i];
+                result += arabicNumber.get(i);
                 // move position in roman numeral by 1
                 j++;
             }
 
             // handling CM, XC etc
-            else if ((i%2 == 0) && i < arabicNumber.length-2 && j < input.length()-1 && input.charAt(j) == romanNumeral[i+2] &&
-                    input.charAt(j+1) == romanNumeral[i])
+            else if ((i%2 == 0) && i < arabicNumber.size()-2 && j < input.length()-1 && input.charAt(j) == romanNumeral.get(i+2) &&
+                    input.charAt(j+1) == romanNumeral.get(i))
             {
-                result += arabicNumber[i]- arabicNumber[i+2];
+                result += arabicNumber.get(i)- arabicNumber.get(i+2);
                 // move position in roman numeral by 2
                 j+=2;
                 // move position in array by 1
@@ -51,10 +49,10 @@ public class RomanToArabic
             }
 
             // handling XL, IX etc
-            else if ((i%2 == 1) && i < arabicNumber.length-1 && j < input.length()-1 && input.charAt(j) == romanNumeral[i+1] &&
-                    input.charAt(j+1) == romanNumeral[i])
+            else if ((i%2 == 1) && i < arabicNumber.size()-1 && j < input.length()-1 && input.charAt(j) == romanNumeral.get(i+1) &&
+                    input.charAt(j+1) == romanNumeral.get(i))
             {
-                result += arabicNumber[i]- arabicNumber[i+1];
+                result += arabicNumber.get(i)- arabicNumber.get(i+1);
                 // move position in roman numeral by 2
                 j+=2;
                 // move position in array by 1
