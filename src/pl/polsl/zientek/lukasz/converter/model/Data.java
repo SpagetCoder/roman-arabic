@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Data
 {
+    /**
+     * Method which return list of arabic numbers
+     * @return list of arabic numbers
+     */
     public List<Integer> getArabicNumber()
     {
         List<Integer> arabicNumber = new ArrayList<>();
@@ -19,6 +23,10 @@ public class Data
         return arabicNumber;
     }
 
+    /**
+     * Method which return list of roman numerals
+     * @return list of roman numerals
+     */
     public List<Character> getRomanNumeral()
     {
         List<Character> romanNumeral = new ArrayList<>();
