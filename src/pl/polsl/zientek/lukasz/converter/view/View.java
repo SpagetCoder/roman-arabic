@@ -1,81 +1,39 @@
 package pl.polsl.zientek.lukasz.converter.view;
 
 /**
- * The view class - responsible for viewing messages
+ * The view class responsible for viewing messages
  * @author Lukasz Zientek
  * @version 1.0.1
  */
 public class View
 {
     /**
-     * Prints arabic number converted into roman numeral
-     * @param Arabic number which is being converted to roman numeral
-     * @param Roman roman numeral received after conversion
+     * Prints exception message from toString() method
+     * @param e exception which occured
      */
-    public void viewArabicToRoman(long Arabic, StringBuilder Roman)
+    public void printMessage(Exception e) { System.out.println(e); }
+
+    /**
+     * Prints arabic number converted into roman numeral
+     * @param arabic number which is being converted to roman numeral
+     * @param roman roman numeral received after conversion
+     */
+    public void viewArabicToRoman(String arabic, String roman)
     {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(Arabic).append(" converted to roman numeral = ").append(Roman).append("\n");
+        stringBuilder.append(arabic).append(" converted to roman numeral = ").append(roman).append("\n");
         System.out.println(stringBuilder);
     }
 
     /**
      * Prints roman numeral converted into arabic number
-     * @param Roman roman numeral which is being converted to arabic number
-     * @param Arabic arabic roman obtained after conversion
+     * @param roman roman numeral which is being converted to arabic number
+     * @param arabic arabic roman obtained after conversion
      */
-    public void viewRomanToArabic(String Roman,int Arabic)
+    public void viewRomanToArabic(String roman,long arabic)
     {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(Roman).append(" converted to arabic number = ").append(Arabic).append("\n");
-        System.out.println(stringBuilder);
-    }
-
-    /**
-     * Prints message about wrong number ( larger than 3999)
-     * @param input argument given by user via command line
-     * @param previousInput argument given by user via command line
-     */
-    public void greaterError(String previousInput,String input)
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(previousInput).append(" ").append(input).append(" - number cannot be more than 3999").append("\n");
-        System.out.println(stringBuilder);
-    }
-
-    /**
-     * Prints message about wrong number (less than 1)
-     * @param input argument given by user via command line
-     * @param previousInput argument given by user via command line
-     */
-    public void lessError(String previousInput,String input)
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(previousInput).append(" ").append(input).append(" - number cannot be less than 1").append("\n");
-        System.out.println(stringBuilder);
-    }
-
-    /**
-     * Prints message about wrong input for arabic to roman conversion
-     * @param input argument given by user via command line
-     * @param previousInput argument given by user via command line
-     */
-    public void invalidInputArabic(String previousInput,String input)
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(previousInput).append(" ").append(input).append(" - given argument is not a correct arabic number").append("\n");
-        System.out.println(stringBuilder);
-    }
-
-    /**
-     * Prints message about wrong input for roman to arabic conversion
-     * @param previousInput argument given by user via command line
-     * @param input input argument given by user via command line
-     */
-    public void invalidInputRoman(String previousInput,String input)
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(previousInput).append(" ").append(input).append(" - given argument is not a correct roman numeral").append("\n");
+        stringBuilder.append(roman).append(" converted to arabic number = ").append(arabic).append("\n");
         System.out.println(stringBuilder);
     }
 
@@ -102,24 +60,13 @@ public class View
     }
 
     /**
-     * Prints message about missing switch for arabic to roman numeral conversion (user provided argument without switch -a)
+     * Prints message about missing switch
      * @param input argument given by user via command line
      */
-    public void missingSwitchArabic(String input)
+    public void missingSwitch(String input)
     {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(input).append( " - argument given without switch. Missing: ").append("-a").append("\n");
-        System.out.println(stringBuilder);
-    }
-
-    /**
-     * Prints message about missing switch for roman to arabic number conversion (user provided argument without switch -r)
-     * @param input argument given by user via command line
-     */
-    public void missingSwitchRoman(String input)
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(input).append( " - argument given without switch. Missing: ").append("-r").append("\n");
+        stringBuilder.append(input).append( " - argument given without switch.").append("\n");
         System.out.println(stringBuilder);
     }
 }
