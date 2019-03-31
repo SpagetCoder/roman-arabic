@@ -18,14 +18,16 @@ public class RomanToArabic
     public Long romanToArabicAlgorithm(String input)
     {
         Data data = new Data();
+        // create new list for roman numerals
         List<Character> romanNumeral = data.getRomanNumeral();
+        // create new list for arabic numbers
         List<Integer> arabicNumber = data.getArabicNumber();
 
         int i = 0;// position in list
         int j = 0; // position in roman numeral
         long result = 0;
 
-        // our position in roman numeral has to be less than length of this numeral and position in array has to be less than length of arabicNumber array
+        // our position in roman numeral has to be less than length of this numeral and position in list has to be less than length of arabicNumber list
         while (j < input.length() && i < arabicNumber.size())
         {
             // if we find corresponding char, handling M, D , C etc
@@ -44,7 +46,7 @@ public class RomanToArabic
                 result += arabicNumber.get(i)- arabicNumber.get(i+2);
                 // move position in roman numeral by 2
                 j+=2;
-                // move position in array by 1
+                // move position in list by 1
                 i++;
             }
 
@@ -55,12 +57,12 @@ public class RomanToArabic
                 result += arabicNumber.get(i)- arabicNumber.get(i+1);
                 // move position in roman numeral by 2
                 j+=2;
-                // move position in array by 1
+                // move position in list by 1
                 i++;
             }
 
             else
-                // move position in array by 1
+                // move position in list by 1
                 i++;
         }
         return result;

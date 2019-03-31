@@ -4,6 +4,8 @@ import pl.polsl.zientek.lukasz.converter.model.arabicroman.*;
 import pl.polsl.zientek.lukasz.converter.model.romanarabic.*;
 import pl.polsl.zientek.lukasz.converter.view.View;
 
+import java.util.List;
+
 /**
  * Checks if input given by user is correct
  * @author Lukasz Zientek
@@ -12,7 +14,7 @@ import pl.polsl.zientek.lukasz.converter.view.View;
 public class CheckCommandConsoleArguments
 {
     /**
-     * initialization of object of the class view
+     * initialization of object of the class View
      */
     private View view = new View();
 
@@ -21,23 +23,23 @@ public class CheckCommandConsoleArguments
      * If input is correct it provides it into suitable methods
      * @param input argument given by user via command line
      */
-    public void checkArguments(String[] input)
+    public void checkArguments(List<String> input)
     {
         int i = 0; // position in arguments
 
         // check every argument
-        while (i < input.length)
+        while (i < input.size())
         {
             // if argument starts with a switch and there exists next argument which is not a switch
-            if (input[i].startsWith("-") && i < input.length-1 && !input[i+1].startsWith("-"))
+            if (input.get(i).startsWith("-") && i < input.size()-1 && !input.get(i+1).startsWith("-"))
             {
                     // arabic to roman conversion
-                    if (input[i].equals("-r"))
+                    if (input.get(i).equals("-r"))
                     {
                         // try to convert given input into roman numeral
                         try
                         {
-                           view.viewArabicToRoman(input[i+1], new ArabicToRoman().convertArabicToRoman(input[i],input[i+1]));
+                           view.viewArabicToRoman(input.get(i+1), new ArabicToRoman().convertArabicToRoman(input.get(i),input.get(i+1)));
                         }
 
                         // print message about error
@@ -51,12 +53,12 @@ public class CheckCommandConsoleArguments
                     }
 
                     // roman to arabic conversion
-                    else if (input[i].equals("-a"))
+                    else if (input.get(i).equals("-a"))
                     {
                         // try to convert given input into arabic number
                         try
                         {
-                            view.viewRomanToArabic(input[i+1], new RomanToArabic().convertRomanToArabic(input[i],input[i+1]));
+                            view.viewRomanToArabic(input.get(i+1), new RomanToArabic().convertRomanToArabic(input.get(i),input.get(i+1)));
                         }
 
                         // print message about error
@@ -72,24 +74,24 @@ public class CheckCommandConsoleArguments
                     else
                     {
                         // print message about unrecognized switch
-                        view.unrecognizedSwitch(input[i]);
+                        view.unrecognizedSwitch(input.get(i));
                         i+=2;
                     }
             }
 
             else
             {
-                if (input[i].equals("-r") || input[i].equals("-a"))
+                if (input.get(i).equals("-r") || input.get(i).equals("-a"))
                     //print message about missing argument
-                    view.missingArgument(input[i]);
+                    view.missingArgument(input.get(i));
 
-                else if (input[i].startsWith("-"))
+                else if (input.get(i).startsWith("-"))
                     //print message about unrecognizedSwitch
-                    view.unrecognizedSwitch(input[i]);
+                    view.unrecognizedSwitch(input.get(i));
 
                 else
                     // print message about missing switch
-                        view.missingSwitch(input[i]);
+                        view.missingSwitch(input.get(i));
 
                 //move position in arguments by 1
                 i++;

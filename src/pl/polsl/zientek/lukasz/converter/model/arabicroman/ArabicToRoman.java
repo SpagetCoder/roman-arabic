@@ -18,19 +18,21 @@ public class ArabicToRoman
     public String arabicToRomanAlgorithm(long number)
     {
         Data data = new Data();
+        // create new list for roman numerals
         List<Character> romanNumeral = data.getRomanNumeral();
+        // create new list for arabic numbers
         List<Integer> arabicNumber = data.getArabicNumber();
 
         StringBuilder result = new StringBuilder();
         int i = 0; // position in list
 
-        // keep doing the algorithm until number > 0 or position in array is larger than length of this array
+        // keep doing the algorithm until number > 0 or position in list is larger than length of this list
         while (number > 0 && i < arabicNumber.size())
         {
-            // if number is bigger than value in array
+            // if number is bigger than value in list
             if (number >= arabicNumber.get(i))
             {
-                // decrease number using corresponding value from array
+                // decrease number using corresponding value from list
                 number -= arabicNumber.get(i);
                 // add roman numeral to result
                 result.append(romanNumeral.get(i));
@@ -39,27 +41,27 @@ public class ArabicToRoman
             // handling CM, XC etc
             else if(i%2==0 && i < arabicNumber.size()-2 && number >= arabicNumber.get(i)- arabicNumber.get(i+2))
             {
-                // decrease number using corresponding value from array
+                // decrease number using corresponding value from list
                 number -= arabicNumber.get(i)- arabicNumber.get(i+2);
                 // add roman numeral to result
                 result.append(romanNumeral.get(i+2)).append(romanNumeral.get(i));
-                // move position in array by 1
+                // move position in list by 1
                 i++;
             }
 
             // handling XL, IX etc
             else if(i%2==1 && i < arabicNumber.size()-1 && number >= arabicNumber.get(i)- arabicNumber.get(i+1))
             {
-                // decrease number using corresponding value from array
+                // decrease number using corresponding value from list
                 number -= arabicNumber.get(i)- arabicNumber.get(i+1);
                 // add roman numeral to result
                 result.append(romanNumeral.get(i+1)).append(romanNumeral.get(i));
-                // move position in array by 1
+                // move position in list by 1
                 i++;
             }
 
             else
-                // move position in array by 1
+                // move position in list by 1
                 i++;
         }
 

@@ -3,10 +3,15 @@ package pl.polsl.zientek.lukasz.converter.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class data which hold all the necessary data for algorithm to work
+ * @author Lukasz Zientek
+ * @version 1.0.1
+ */
 public class Data
 {
     /**
-     * Method which return list of arabic numbers
+     * Method which returns list of arabic numbers
      * @return list of arabic numbers
      */
     public List<Integer> getArabicNumber()
@@ -24,7 +29,7 @@ public class Data
     }
 
     /**
-     * Method which return list of roman numerals
+     * Method which returns list of roman numerals
      * @return list of roman numerals
      */
     public List<Character> getRomanNumeral()

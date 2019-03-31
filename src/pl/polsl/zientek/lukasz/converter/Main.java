@@ -1,6 +1,8 @@
 package pl.polsl.zientek.lukasz.converter;
 
 import pl.polsl.zientek.lukasz.converter.controller.CheckCommandConsoleArguments;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Main class initializing run of the program
@@ -15,6 +17,13 @@ public class Main
      */
     public static void main(String[] args)
     {
-        new CheckCommandConsoleArguments().checkArguments(args);
+        List<String> input = new ArrayList<>();
+
+        for (String arguments: args)
+        {
+            input.add(arguments);
+        }
+
+        new CheckCommandConsoleArguments().checkArguments(input);
     }
 }
