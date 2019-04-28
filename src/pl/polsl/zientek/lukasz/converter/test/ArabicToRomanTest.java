@@ -3,7 +3,7 @@ package pl.polsl.zientek.lukasz.converter.test;
 import org.junit.Test;
 import pl.polsl.zientek.lukasz.converter.model.arabicroman.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class ArabicToRomanTest
 {
@@ -17,7 +17,7 @@ public class ArabicToRomanTest
             assertEquals( test1.convertArabicToRoman("-r", "536"),"DXXXVI");
         }
 
-        catch (Exception x) { }
+        catch (Exception x) { fail("Exception occured");}
     }
 
     @Test
@@ -28,7 +28,7 @@ public class ArabicToRomanTest
             assertEquals( test1.convertArabicToRoman("-r", "1"),"I");
         }
 
-        catch (Exception x) { }
+        catch (Exception x) { fail("Exception occured");}
     }
 
     @Test
@@ -39,29 +39,25 @@ public class ArabicToRomanTest
             assertEquals( test1.convertArabicToRoman("-r", "3999"),"MMMCMXCIX");
         }
 
-        catch (Exception x) { }
+        catch (Exception x) { fail("Exception occured");}
     }
 
-    @Test
-    public void convertArabicToRomaTestAbnormalData()
+    @Test(expected = NumberTooBigException.class)
+    public void convertArabicToRomaTestAbnormalDataHigh() throws NumberTooSmallException, NumberTooBigException, WrongArabicNumberException
     {
-
-     boolean isThrown = false;
-
-        try
-        {
-            test1.convertArabicToRoman("-r", "6000");
-        }
-        catch(NumberTooBigException x)
-        {
-            isThrown = true;
-        }
-
-        catch(NumberTooSmallException | WrongArabicNumberException x) { }
-
-        assertTrue(isThrown);
-
+        test1.convertArabicToRoman("-r", "6000");
     }
 
+    @Test(expected = NumberTooSmallException.class)
+    public void convertArabicToRomaTestAbnormalDataLow() throws NumberTooSmallException, NumberTooBigException, WrongArabicNumberException
+    {
+        test1.convertArabicToRoman("-r", "-5346");
+    }
+
+    @Test(expected = WrongArabicNumberException.class)
+    public void convertArabicToRomaTestAbnormalData() throws NumberTooSmallException, NumberTooBigException, WrongArabicNumberException
+    {
+        test1.convertArabicToRoman("-r", "sample text");
+    }
 
 }
