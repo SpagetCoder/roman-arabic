@@ -25,7 +25,7 @@ public class RomanToArabic
 
         int i = 0;// position in list
         int j = 0; // position in roman numeral
-        long result = 0;
+        long result = 0L;
 
         // our position in roman numeral has to be less than length of this numeral and position in list has to be less than length of arabicNumber list
         while (j < input.length() && i < arabicNumber.size())
