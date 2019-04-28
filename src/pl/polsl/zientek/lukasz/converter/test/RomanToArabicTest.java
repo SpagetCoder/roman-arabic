@@ -31,7 +31,7 @@ public class RomanToArabicTest
             assertEquals(test2.convertRomanToArabic("-a","I"),1L, 0.0);
         }
 
-        catch (Exception x) { }
+        catch (Exception x) { fail("Exception occured");}
     }
 
     @Test
@@ -42,7 +42,7 @@ public class RomanToArabicTest
             assertEquals(test2.convertRomanToArabic("-a","MMMCMXCIX"),3999L, 0.0);
         }
 
-        catch (Exception x) { }
+        catch (Exception x) { fail("Exception occured");}
     }
 
 
