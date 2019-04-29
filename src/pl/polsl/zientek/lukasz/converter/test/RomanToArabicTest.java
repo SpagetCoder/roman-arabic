@@ -1,14 +1,15 @@
 package pl.polsl.zientek.lukasz.converter.test;
 
 import org.junit.Test;
-import pl.polsl.zientek.lukasz.converter.main.model.romanarabic.RomanToArabic;
-import pl.polsl.zientek.lukasz.converter.main.model.romanarabic.WrongRomanNumeralException;
+import pl.polsl.zientek.lukasz.converter.main.model.romanarabic.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class RomanToArabicTest
 {
-
+    /**
+     * RomanToArabic object used for testing
+     */
     private final RomanToArabic test2 = new RomanToArabic();
 
     /**
@@ -75,6 +76,4 @@ public class RomanToArabicTest
         // we intentionally provide wrong data, program should throw exception about incorrect input
         test2.convertRomanToArabic("-a", "sample text");
     }
-
-
 }
