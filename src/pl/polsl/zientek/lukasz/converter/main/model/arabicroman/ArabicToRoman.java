@@ -1,6 +1,6 @@
-package pl.polsl.zientek.lukasz.converter.model.arabicroman;
+package pl.polsl.zientek.lukasz.converter.main.model.arabicroman;
 
-import pl.polsl.zientek.lukasz.converter.model.Data;
+import pl.polsl.zientek.lukasz.converter.main.model.Data;
 import java.util.List;
 
 /**

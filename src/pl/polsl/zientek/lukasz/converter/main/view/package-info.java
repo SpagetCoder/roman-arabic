@@ -3,4 +3,4 @@
  * @author Lukasz Zientek
  * @version 1.0.1
  */
-package pl.polsl.zientek.lukasz.converter.view;
+package pl.polsl.zientek.lukasz.converter.main.view;

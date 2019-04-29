@@ -1,4 +1,4 @@
-package pl.polsl.zientek.lukasz.converter.model.arabicroman;
+package pl.polsl.zientek.lukasz.converter.main.model.arabicroman;
 
 /**
  * Exception which will be thrown if number given by user is too big

@@ -1,11 +1,11 @@
-package pl.polsl.zientek.lukasz.converter.model.romanarabic;
+package pl.polsl.zientek.lukasz.converter.main.model.arabicroman;
 
 /**
- * Exception which will be thrown if input given by user is not a correct roman numeral
+ * Exception which will be thrown if input given by user is not a number
  * @author Lukasz Zientek
  * @version 1.0.1
  */
-public class WrongRomanNumeralException extends Exception
+public class WrongArabicNumberException extends Exception
 {
     /**
      * String which stores first argument
@@ -17,11 +17,11 @@ public class WrongRomanNumeralException extends Exception
     private String input;
 
     /**
-     * Constructor of class WrongRomanNumeralException
+     * Constructor of class WrongArabicNumberException
      * @param previousInput first argument given by user
      * @param input second argument given by user
      */
-    public WrongRomanNumeralException(String previousInput, String input)
+    public WrongArabicNumberException(String previousInput, String input)
     {
         this.previousInput = previousInput;
         this.input = input;
@@ -32,6 +32,5 @@ public class WrongRomanNumeralException extends Exception
      * @return message about wrong number
      */
     @Override
-    public String toString() { return previousInput + (" ") + input + " - given argument is not a correct roman numeral" + "\n"; }
-
+    public String toString() { return previousInput + (" ") + input + " - given argument is not a correct arabic number" + "\n"; }
 }

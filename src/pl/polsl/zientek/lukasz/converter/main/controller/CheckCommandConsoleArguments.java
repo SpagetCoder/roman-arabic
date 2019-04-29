@@ -1,8 +1,8 @@
-package pl.polsl.zientek.lukasz.converter.controller;
+package pl.polsl.zientek.lukasz.converter.main.controller;
 
-import pl.polsl.zientek.lukasz.converter.model.arabicroman.*;
-import pl.polsl.zientek.lukasz.converter.model.romanarabic.*;
-import pl.polsl.zientek.lukasz.converter.view.View;
+import pl.polsl.zientek.lukasz.converter.main.model.arabicroman.*;
+import pl.polsl.zientek.lukasz.converter.main.model.romanarabic.*;
+import pl.polsl.zientek.lukasz.converter.main.view.View;
 
 import java.util.List;
 

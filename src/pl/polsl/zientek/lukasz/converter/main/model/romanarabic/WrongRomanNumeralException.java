@@ -1,11 +1,11 @@
-package pl.polsl.zientek.lukasz.converter.model.arabicroman;
+package pl.polsl.zientek.lukasz.converter.main.model.romanarabic;
 
 /**
- * Exception which will be thrown if number given by user is too small
+ * Exception which will be thrown if input given by user is not a correct roman numeral
  * @author Lukasz Zientek
  * @version 1.0.1
  */
-public class NumberTooSmallException extends Exception
+public class WrongRomanNumeralException extends Exception
 {
     /**
      * String which stores first argument
@@ -17,11 +17,11 @@ public class NumberTooSmallException extends Exception
     private String input;
 
     /**
-     * Constructor of class NumberToSmallException
+     * Constructor of class WrongRomanNumeralException
      * @param previousInput first argument given by user
      * @param input second argument given by user
      */
-    public NumberTooSmallException(String previousInput, String input)
+    public WrongRomanNumeralException(String previousInput, String input)
     {
         this.previousInput = previousInput;
         this.input = input;
@@ -32,8 +32,6 @@ public class NumberTooSmallException extends Exception
      * @return message about wrong number
      */
     @Override
-    public String toString()
-    {
-        return previousInput + (" ") + input + " - number cannot be less than 0" + "\n";
-    }
+    public String toString() { return previousInput + (" ") + input + " - given argument is not a correct roman numeral" + "\n"; }
+
 }

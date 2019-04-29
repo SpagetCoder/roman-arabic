@@ -1,6 +1,6 @@
-package pl.polsl.zientek.lukasz.converter;
+package pl.polsl.zientek.lukasz.converter.main;
 
-import pl.polsl.zientek.lukasz.converter.controller.CheckCommandConsoleArguments;
+import pl.polsl.zientek.lukasz.converter.main.controller.CheckCommandConsoleArguments;
 import java.util.ArrayList;
 import java.util.List;
 

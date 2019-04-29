@@ -1,4 +1,4 @@
-package pl.polsl.zientek.lukasz.converter.view;
+package pl.polsl.zientek.lukasz.converter.main.view;
 
 /**
  * The view class responsible for viewing messages

@@ -1,4 +1,4 @@
-package pl.polsl.zientek.lukasz.converter.model;
+package pl.polsl.zientek.lukasz.converter.main.model;
 
 import java.util.ArrayList;
 import java.util.List;
